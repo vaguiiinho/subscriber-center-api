@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Unit;
+namespace Tests\Unit\Domain;
 
 use Core\Domain\Entity\Invoice;
 use Core\Domain\Enum\InvoiceReceiptType;

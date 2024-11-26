@@ -18,24 +18,24 @@ class CreateInvoiceUseCase
     public function execute(CreateInvoiceInputDto $inputDto): CreateInvoiceOutputDto
     {
         $invoice = new Invoice(
-            new DateTime($inputDto->emissonDate),
-            new DateTime($inputDto->maturityDate),
-            $inputDto->amount,
-            InvoiceReceiptType::from($inputDto->receiptType),
-            InvoiceStatus::from($inputDto->status),
-            $inputDto->idExternal
+            emissonDate: new DateTime($inputDto->emissonDate),
+            maturityDate: new DateTime($inputDto->maturityDate),
+            amount: $inputDto->amount,
+            receiptType: InvoiceReceiptType::from($inputDto->receiptType),
+            status: InvoiceStatus::from($inputDto->status),
+            idExternal: $inputDto->idExternal
         );
         $response = $this->invoiceRepository->insert($invoice);
-
+       
         // Return output DTO
         return new CreateInvoiceOutputDto(
-            $response->id(),
-            $response->emissonDate()->format('Y-m-d'),
-            $response->maturityDate()->format('Y-m-d'),
-            $response->amount,
-            $response->receiptType->vlaue,
-            $response->status->vlaue,
-            $response->idExternal
+            id: $response->id(),
+            emissonDate: $invoice->emissonDate(),
+            maturityDate: $invoice->maturityDate(),
+            amount: $invoice->amount,
+            receiptType: $response->receiptType->value,
+            status: $response->status->value,
+            idExternal: $response->idExternal
         );
     }
 }
