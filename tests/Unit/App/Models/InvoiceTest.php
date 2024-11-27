@@ -2,9 +2,12 @@
 
 namespace Tests\Unit\App\Models;
 
+use App\Models\Invoice;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class InvoiceUnitTest extends ModelTestCase
+class InvoiceTest extends ModelTestCase
 {
     protected function model(): Model
     {
@@ -28,7 +31,7 @@ class InvoiceUnitTest extends ModelTestCase
             'amount',
             'receipt_type',
             'status',
-            'id_external',
+            'id_external'
         ];
     }
 
@@ -41,7 +44,6 @@ class InvoiceUnitTest extends ModelTestCase
     {
         return [
             'id' => 'string',
-            'is_active' => 'boolean',
             'deleted_at' => 'datetime',
         ];
     }
