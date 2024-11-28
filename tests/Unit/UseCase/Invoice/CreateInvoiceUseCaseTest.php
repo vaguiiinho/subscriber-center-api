@@ -37,11 +37,11 @@ class CreateInvoiceUseCaseTest extends TestCase
         ]);
 
         $mockEntity->shouldReceive('id')->andReturn(new ValueObjectUuid($uuid));
-        $mockEntity->shouldReceive('emissonDate')->andReturn(Date('Y-m-d'));
+        $mockEntity->shouldReceive('emissionDate')->andReturn(Date('Y-m-d'));
         $mockEntity->shouldReceive('maturityDate')->andReturn(Date('Y-m-d'));
 
         $mockRepository->shouldReceive('insert')
-            // ->once()
+            ->once()
             ->andReturn($mockEntity);
 
         $mockInputDto = Mockery::mock(CreateInvoiceInputDto::class, [
@@ -61,7 +61,7 @@ class CreateInvoiceUseCaseTest extends TestCase
         // // Assert
         $this->assertInstanceOf(CreateInvoiceOutputDto::class, $response);
         $this->assertEquals($uuid, $response->id);
-        $this->assertEquals('2023-12-15', $response->emissonDate);
+        $this->assertEquals('2023-12-15', $response->emissionDate);
         $this->assertEquals('2023-12-20', $response->maturityDate);
         $this->assertEquals(100, $response->amount);
         $this->assertEquals('P', $response->receiptType);

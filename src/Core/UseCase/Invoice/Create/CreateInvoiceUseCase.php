@@ -18,7 +18,7 @@ class CreateInvoiceUseCase
     public function execute(CreateInvoiceInputDto $inputDto): CreateInvoiceOutputDto
     {
         $invoice = new Invoice(
-            emissonDate: new DateTime($inputDto->emissonDate),
+            emissionDate: new DateTime($inputDto->emissionDate),
             maturityDate: new DateTime($inputDto->maturityDate),
             amount: $inputDto->amount,
             receiptType: InvoiceReceiptType::from($inputDto->receiptType),
@@ -30,7 +30,7 @@ class CreateInvoiceUseCase
         // Return output DTO
         return new CreateInvoiceOutputDto(
             id: $response->id(),
-            emissonDate: $invoice->emissonDate(),
+            emissionDate: $invoice->emissionDate(),
             maturityDate: $invoice->maturityDate(),
             amount: $invoice->amount,
             receiptType: $response->receiptType->value,

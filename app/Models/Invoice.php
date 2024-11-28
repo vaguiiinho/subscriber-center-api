@@ -12,12 +12,12 @@ class Invoice extends Model
 
     protected $fillable = [
         'id',
-        'emissonDate',
+        'emissionDate',
         'maturityDate',
         'amount',
-        'receipt_type',
+        'receiptType',
         'status',
-        'id_external'
+        'idExternal'
     ];
 
     public  $incrementing = false;

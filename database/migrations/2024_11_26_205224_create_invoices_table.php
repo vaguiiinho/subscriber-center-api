@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('receiptType');
             $table->string('status');
             $table->unsignedBigInteger('idExternal');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

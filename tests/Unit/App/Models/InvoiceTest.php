@@ -26,12 +26,12 @@ class InvoiceTest extends ModelTestCase
     {
         return [
             'id',
-            'emissonDate',
+            'emissionDate',
             'maturityDate',
             'amount',
-            'receipt_type',
+            'receiptType',
             'status',
-            'id_external'
+            'idExternal'
         ];
     }
 
