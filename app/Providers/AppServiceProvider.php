@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Eloquent\InvoiceEloquentRepository;
+use Core\Domain\Repository\InvoiceRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -11,7 +13,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->singleton(
+            InvoiceRepositoryInterface::class,
+            InvoiceEloquentRepository::class
+        );
     }
 
     /**
