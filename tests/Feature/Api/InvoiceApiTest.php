@@ -50,4 +50,15 @@ class InvoiceApiTest extends TestCase
         $this->assertEquals(20, $response['meta']['total']);
         $this->assertEquals(2, $response['meta']['current_page']);
     }
+
+    public function test_pagination_with_filter()
+    {
+        Invoice::factory()->count(20)->create(['status' => 'A']);
+        Invoice::factory()->count(5)->create(['status' => 'R']);
+
+        $response = $this->getJson("$this->endPoint/?filter=R");
+
+        $response->assertStatus(Response::HTTP_OK);
+        $response->assertJsonCount(5, 'data');
+    }
 }

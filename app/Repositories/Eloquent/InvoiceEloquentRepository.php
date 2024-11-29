@@ -31,9 +31,9 @@ class InvoiceEloquentRepository implements InvoiceRepositoryInterface
 
     public function paginate(string $filter = '', $order = 'DESC', int $page = 1, int $totalPage = 15): PaginationInterface
     {
-        $query = $this->model;
+        $query = $this->model->newQuery();
         if ($filter) {
-            $query->where('name', 'LIKE', "%{$filter}%");
+            $query->where('status', 'LIKE', "%{$filter}%");
         }
         $query->orderBy('id', $order);
         $paginator = $query->paginate();
