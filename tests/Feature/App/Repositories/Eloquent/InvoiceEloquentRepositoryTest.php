@@ -40,8 +40,8 @@ class InvoiceEloquentRepositoryTest extends TestCase
 
         $this->assertInstanceOf(Entity::class, $response);
         $this->assertDatabaseHas('invoices', [
-            'emissionDate' => '2023-12-15',
-            'maturityDate' => '2023-12-20',
+            'emissionDate' => '2023-12-15 00:00:00',
+            'maturityDate' => '2023-12-20 00:00:00',
             'amount' => 100,
             'receiptType' => 'P',
             'status' => 'R',

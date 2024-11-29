@@ -35,7 +35,7 @@ class PaginateInvoiceUseCaseTest extends TestCase
         // Action
 
         $response = $useCase->execute($mockInput);
-dump($response);
+
         // Assert
         $this->assertInstanceOf(PaginateInvoiceOutputDto::class, $response);
 
