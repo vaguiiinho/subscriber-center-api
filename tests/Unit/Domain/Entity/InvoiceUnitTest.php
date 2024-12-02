@@ -1,12 +1,11 @@
 <?php
 
-namespace Tests\Unit\Domain;
+namespace Tests\Unit\Domain\Entiry;
 
 use Core\Domain\Entity\Invoice;
 use Core\Domain\Enum\InvoiceReceiptType;
 use Core\Domain\Enum\InvoiceStatus;
 use DateTime;
-use DateTimeImmutable;
 use PHPUnit\Framework\TestCase;
 
 class InvoiceUnitTest extends TestCase

@@ -26,12 +26,4 @@ abstract class Entity
     public function id() {
         return (string) $this->id; 
     }
-
-    public function emissionDate() {
-        return $this->emissionDate->format('Y-m-d'); 
-    }
-
-    public function maturityDate() {
-        return $this->maturityDate->format('Y-m-d'); 
-    }
 }

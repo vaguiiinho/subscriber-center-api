@@ -21,5 +21,14 @@ class Invoice extends Entity
     ) {
         $this->id = $this->id ?? Uuid::random();
     }
-}
 
+    public function emissionDate()
+    {
+        return $this->emissionDate->format('Y-m-d');
+    }
+
+    public function maturityDate()
+    {
+        return $this->maturityDate->format('Y-m-d');
+    }
+}
