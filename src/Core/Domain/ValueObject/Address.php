@@ -12,9 +12,9 @@ class Address
         protected string $city,
     ) {}
 
-    public function getAddress(): self
+    public function __get($property)
     {
-        return $this;
+        return $this->{$property};
     }
 }
 

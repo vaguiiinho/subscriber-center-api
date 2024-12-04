@@ -2,10 +2,14 @@
 
 namespace Core\Domain\Entity;
 
-use Core\Domain\Enum\ContractStatus;
-use Core\Domain\Enum\InternetStatus;
-use Core\Domain\ValueObject\Address;
-use Core\Domain\ValueObject\Uuid;
+use Core\Domain\Enum\{
+    ContractStatus,
+    InternetStatus
+};
+use Core\Domain\ValueObject\{
+    Address,
+    Uuid
+};
 use DateTime;
 
 class Contract extends Entity
@@ -31,5 +35,15 @@ class Contract extends Entity
     public function renewalDate()
     {
         return $this->renewalDate->format('Y-m-d');
+    }
+
+    public function setAddress(Address $address): void
+    {
+        $this->address = $address;
+    }
+
+    public function address():?Address
+    {
+        return $this->address;
     }
 }

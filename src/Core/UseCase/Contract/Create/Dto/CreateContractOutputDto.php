@@ -2,17 +2,19 @@
 
 namespace Core\UseCase\Contract\Create\Dto;
 
-use Core\Domain\ValueObject\Address;
-
-class CreateContractInputDto
+class CreateContractOutputDto
 {
     public function __construct(
+        public string $id,
         public string $activationDate,
         public string $renewalDate,
         public string $contractStatus,
         public string $internetStatus,
         public string $idExternal,
-        public ?Address $address = null,
-        
+        public ?string $street = null,
+        public ?string $number = null,
+        public ?string $neighborhood = null,
+        public ?string $complement = null,
+        public ?string $city = null,
     ) {}
 }

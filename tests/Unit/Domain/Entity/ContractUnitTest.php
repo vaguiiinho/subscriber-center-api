@@ -31,6 +31,7 @@ class ContractUnitTest extends TestCase
             ),
         );
 
+
         $this->assertNotEmpty($contract->id);
         $this->assertEquals('2023-12-15', $contract->activationDate());
         $this->assertEquals('2024-01-01', $contract->renewalDate());
@@ -38,6 +39,11 @@ class ContractUnitTest extends TestCase
         $this->assertEquals(InternetStatus::ACTIVE, $contract->internetStatus);
         $this->assertEquals('10', $contract->idExternal);
         $this->assertInstanceOf(Address::class, $contract->address);
+        $this->assertEquals('123 Main St', $contract->address->street);
+        $this->assertEquals('456', $contract->address->number);
+        $this->assertEquals('Downtown', $contract->address->neighborhood);
+        $this->assertEquals('Apt 789', $contract->address->complement);
+        $this->assertEquals('Springfield', $contract->address->city);
     }
 
     public function testAttributesNotAddress()

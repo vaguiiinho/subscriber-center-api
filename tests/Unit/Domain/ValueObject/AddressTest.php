@@ -18,10 +18,12 @@ class AddressTest extends TestCase
             city: 'Springfield'
         );
 
-        // Act: 
-        $result = $address->getAddress();
-
         // Assert: 
-        $this->assertSame($address, $result);
+        $this->assertInstanceOf(Address::class, $address);
+        $this->assertEquals('123 Main St', $address->street);
+        $this->assertEquals('456', $address->number);
+        $this->assertEquals('Downtown', $address->neighborhood);
+        $this->assertEquals('Apt 789', $address->complement);
+        $this->assertEquals('Springfield', $address->city);
     }
 }
