@@ -25,13 +25,14 @@ class ContractEloquentRepository implements ContractRepositoryInterface
             'idExternal' => $entity->idExternal
         ]);
 
+
         if ($address = $entity->address()) {
             $response->address()->create([
-                'street' => $address->getStreet(),
-                'number' => $address->getNumber(),
-                'neighborhood' => $address->getNeighborhood(),
-                'complement' => $address->getComplement(),
-                'city' => $address->getCity(),
+                'street' => $address->street,
+                'number' => $address->number,
+                'neighborhood' => $address->neighborhood,
+                'complement' => $address->complement,
+                'city' => $address->city,
             ]);
         }
 
