@@ -2,8 +2,14 @@
 
 namespace App\Providers;
 
-use App\Repositories\Eloquent\InvoiceEloquentRepository;
-use Core\Domain\Repository\InvoiceRepositoryInterface;
+use App\Repositories\Eloquent\{
+    ContractEloquentRepository,
+    InvoiceEloquentRepository,
+};
+use Core\Domain\Repository\{
+    ContractRepositoryInterface,
+    InvoiceRepositoryInterface,
+};
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -16,6 +22,11 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(
             InvoiceRepositoryInterface::class,
             InvoiceEloquentRepository::class
+        );
+
+        $this->app->singleton(
+            ContractRepositoryInterface::class,
+            ContractEloquentRepository::class
         );
     }
 

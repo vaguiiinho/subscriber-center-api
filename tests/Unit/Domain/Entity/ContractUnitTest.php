@@ -3,11 +3,10 @@
 namespace Tests\Unit\Domain\Entiry;
 
 use Core\Domain\Entity\Contract;
-use Core\Domain\Entity\Invoice;
-use Core\Domain\Enum\ContractStatus;
-use Core\Domain\Enum\InternetStatus;
-use Core\Domain\Enum\InvoiceReceiptType;
-use Core\Domain\Enum\InvoiceStatus;
+use Core\Domain\Enum\{
+    ContractStatus,
+    InternetStatus
+};
 use Core\Domain\ValueObject\Address;
 use DateTime;
 use PHPUnit\Framework\TestCase;

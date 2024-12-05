@@ -3,8 +3,10 @@
 namespace Tests\Unit\Domain\Entiry;
 
 use Core\Domain\Entity\Invoice;
-use Core\Domain\Enum\InvoiceReceiptType;
-use Core\Domain\Enum\InvoiceStatus;
+use Core\Domain\Enum\{
+    InvoiceReceiptType,
+    InvoiceStatus
+};
 use DateTime;
 use PHPUnit\Framework\TestCase;
 

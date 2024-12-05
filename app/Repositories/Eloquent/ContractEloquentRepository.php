@@ -43,7 +43,7 @@ class ContractEloquentRepository implements ContractRepositoryInterface
     {
         $query = $this->model->newQuery();
         if ($filter) {
-            $query->where('status', 'LIKE', "%{$filter}%");
+            $query->where('contractStatus', 'LIKE', "%{$filter}%");
         }
         $query->orderBy('id', $order);
         $paginator = $query->paginate();
