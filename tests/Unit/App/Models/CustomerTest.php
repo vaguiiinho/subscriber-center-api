@@ -29,6 +29,7 @@ class CustomerTest extends ModelTestCase
         return [
             'id',
             'active',
+            'personType',
             'name',
             'cnpj_cpf',
             'birthDate',

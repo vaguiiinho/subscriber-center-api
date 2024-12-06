@@ -15,6 +15,7 @@ class Customer extends Model
     protected $fillable = [
         'id',
         'active',
+        'personType',
         'name',
         'cnpj_cpf',
         'birthDate',

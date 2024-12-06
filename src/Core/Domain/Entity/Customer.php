@@ -3,8 +3,10 @@
 namespace Core\Domain\Entity;
 
 use Core\Domain\Enum\PersonType;
-use Core\Domain\ValueObject\CnpjCpf;
-use Core\Domain\ValueObject\Uuid;
+use Core\Domain\ValueObject\{
+    CnpjCpf,
+    Uuid
+};
 use DateTime;
 
 class Customer extends Entity

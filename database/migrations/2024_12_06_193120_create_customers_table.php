@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('customers', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->boolean('active');
+            $table->boolean('active')->default(true);
             $table->string('personType');
             $table->string('name');
             $table->string('cnpj_cpf');
